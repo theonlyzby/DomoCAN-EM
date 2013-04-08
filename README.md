@@ -3,7 +3,7 @@ DomoCAN-EM
 
 DomoCAN Eventually Mastered (Web based Independant Central Controller)
 
-0. Credit: This work has been started by Benoitd54 (Initial Post on http://domocan.heberg-forum.net/ftopic54-0.html )
+0. Credit: This work and major part has been delivered by Benoitd54 (Initial Post on http://domocan.heberg-forum.net/ftopic54-0.html )
 
 1. Prerequisite are the following:
 
@@ -26,16 +26,15 @@ Edit /var/domocan/www/conf/config.php in regards to your machine/system settings
 User Access://ip-server/domocan/www/index.php Admin : http://ip-server/domocan/admin phpmyadmin : http://ip-server/phpmyadmin
 
 5. Annexes:
-
 5.1. NGINX Install tuto: Download NGINX
 
+- Download NGINX:
 wget http://nginx.org/download/nginx-1.0.2.tar.gz
-Download push Module:
 
+- Download push Module:
 wget http://pushmodule.slact.net/downloads/nginx_http_push_module-0.692.tar.gz
-UNcompress both using tar -zvxf,
-
-Install nginx, in nginx directory:
+- UNcompress both using tar -zvxf,
+- Install nginx, in nginx directory:
 
 ./configure --prefix=/usr/local/nginx/ --add-module=/où/sont/les/sources/du/module/push/
 make
