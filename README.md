@@ -3,33 +3,30 @@ DomoCAN-EM
 
 DomoCAN Eventually Mastered (Web based Independant Central Controller)
 
-Credit: This work has been started by Benoitd54 (Initial Post on http://domocan.heberg-forum.net/ftopic54-0.html )
+0. Credit: This work has been started by Benoitd54 (Initial Post on http://domocan.heberg-forum.net/ftopic54-0.html )
 
-Prerequisite are the following:
+1. Prerequisite are the following:
 
-Linux installed (no Apache installed)
+- Linux installed (no Apache installed)
+- NGINX server, not the satndard package, but compiled with the PUSH module ( http://pushmodule.slact.net/ )
+- MySQL (preferably with phpmyadmin)
+- PHP CLI (inclued in nginx with FCGI)
+- You will have to represent your house using SWEET HOME 3D (long process).
+- If you want to use the audio modules (music), you have to install MPD daemon and its MPC client.
 
-NGINX server, not the satndard package, but compiled with the PUSH module ( http://pushmodule.slact.net/ )
+2. Install Instructions:
 
-MySQL (preferably with phpmyadmin)
+- Copy all directories/files (www, class, etc) into /var/domocan/www/
+- Recompile /var/www/domocan/bin/server_udp
 
-PHP CLI (inclued in nginx with FCGI)
-
-You will have to represent your house using SWEET HOME 3D (long process).
-
-If you want to use the audio modules (music), you have to install MPD daemon and its MPC client.
-
-Install Instructions:
-
-Copy all directories/files (www, class, etc) into /var/domocan/www/
-
-Finetuning:
+3. Finetuning:
 Edit /var/domocan/www/conf/config.php in regards to your machine/system settings
 
-Enjoy:
+4. Enjoy:
 User Access://ip-server/domocan/www/index.php Admin : http://ip-server/domocan/admin phpmyadmin : http://ip-server/phpmyadmin
 
-Annexes:
+5. Annexes:
+
 5.1. NGINX Install tuto: Download NGINX
 
 wget http://nginx.org/download/nginx-1.0.2.tar.gz
