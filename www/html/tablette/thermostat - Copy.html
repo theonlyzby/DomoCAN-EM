@@ -1,0 +1,12 @@
+          <head>
+		    <script type="text/javascript">
+			  function setMyDiv(userFile)
+			  {			
+			    document.getElementById("contenu_gauche").innerHTML = "<iframe src='"+userFile+"' width=500 height=450 frameborder=0 scrolling=no>";
+			  }
+		    </script>
+		  </head>
+		  <body onLoad="setMyDiv('http://172.27.10.37/domocan/www/html/nest/nest.php?temp={MOYENNEMAISON}')">
+		  <div id="contenu_gauche" style="z-index: 10;">
+          </div>
+		  </body>

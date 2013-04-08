@@ -1,0 +1,54 @@
+          <head>
+		    <script type="text/javascript">
+			var temp_nest         = Math.round({TEMPERATURE});
+			var temp_default      = Math.round({TEMPERATURE});
+			var temp_house        = Math.round({MOYENNEMAISON});
+			var temp_ext          = ({TEMPERATUREEXTERIEURE});
+			var etat_chaudiere    = ({ETATCHAUDIERE});
+			var periode_chauffe   = ({PERIODECHAUFFE});
+			var absence           = ({ABSENCE});
+			var hour              = ({HOUR});
+			var d                 = ({DD}); console.log({DD});;
+			var thermostat_mode   = "TEMP";
+			if (absence=="1") {
+			  var thermostat_mode = "Auto";
+			}
+			var heat_now          = "";
+			var nest_mode         = "thermostat";
+			var fin_chauffe       = String({FINCHAUFFE}); if (fin_chauffe.length==3) { fin_chauffe = "0" + fin_chauffe; }
+			fin_chauffe           = fin_chauffe.substr(0,2) + ":" + fin_chauffe.substr(2,2);
+			var prochaine_chauffe = String({PROCHAINECHAUFFE}); if (prochaine_chauffe.length==3) { prochaine_chauffe = "0" + prochaine_chauffe; }
+			prochaine_chauffe     = prochaine_chauffe.substr(0,2) + ":" + prochaine_chauffe.substr(2,2);
+
+			
+			  function DivDiv()
+			  {
+				var oIframe = document.getElementById('ithermostat');
+				
+				var oDoc = (oIframe.contentWindow || oIframe.contentDocument);
+				if (oDoc.document) oDoc = oDoc.document;
+				oDoc.getElementById("div_info_moyenne").innerHTML = {MOYENNEMAISON};
+
+				return true;
+			  }
+			  function setMyDiv(userFile)
+			  {			
+			    
+			    document.getElementById("contenu_gauche").innerHTML = "<iframe name='ithermostat' id='ithermostat' src='"+userFile+"' width=400 height=450 frameborder=0 scrolling=no>";
+				//setTimeout(function() { DivDiv(); }, 1000);
+
+			  }
+		    </script>
+		  </head>
+		  <body onLoad="setMyDiv('http://172.27.10.37/domocan/www/html/nest/nest.php')">
+		  <div id="info"><span id="changetemp" onClick="go('chauffage')">Temp&eacute;rature: </span>
+		   <strong><span id="moyenne" onClick="go('stats_temperature&idsonde=temperaturemaison');">{MOYENNEMAISON}</span> &deg;C</strong>
+		   (Exterieur: <strong><span id="temperatureexterieure" onClick="go('stats_temperature&idsonde=temperatureexterieure')";>{TEMPERATUREEXTERIEURE}</span> &deg;C</strong>)
+		   , Consigne: {TEMPERATURE} &deg;C, Chaudi&egrave;re: {CHAUDIERE}</div>
+		  <div id="full"><table><tr>
+		  <td width=10%>test</td>
+		  <td width=80%><div id="contenu_gauche" style="z-index: 10;"></div></td>
+          <td width=10%>test2</td>
+		  </tr></table>
+		  </div>
+		  </body>
